@@ -1,3 +1,19 @@
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+
+rockButton.addEventListener("click", function(e) {
+    console.log(e);
+})
+
+paperButton.addEventListener("click", function(e) {
+    console.log(e);
+})
+
+scissorsButton.addEventListener("click", function(e) {
+    console.log(e);
+})
+
 
 function computerPlay(){
     let randomNumber = Math.floor(Math.random() * 3 + 1)
@@ -67,8 +83,8 @@ function game(){
 
     
 
-    for (let i = 0; i < 5; i++){
-        let playerSelection = prompt("Choose Rock/Paper/Scissors");
+    for (let i = 0; i < 1; i++){
+        // let playerSelection = prompt("Choose Rock/Paper/Scissors");
         let computerSelection = computerPlay();
         let results = playRound(computerSelection, playerSelection);
         playerScoreTotal +=  results[0];
@@ -78,7 +94,10 @@ function game(){
 
     if (computerScoreTotal > playerScoreTotal){
         console.log("The Winner is the Computer!");
-    } else {
+    } else if (computerScoreTotal === playerScoreTotal){
+        console.log("Equality");
+    }
+    else {
         console.log("YOU WIN!!");
     }
 }
